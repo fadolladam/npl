@@ -1,0 +1,296 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
+
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #0067B1;
+    --secondary-color: #5BC2E7;
+    --dark-color: #003366;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+    --white: #ffffff;
+    --danger-color: #dc3545;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.bb-bold {
+    font-weight: 700;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Ensure it's above other content */
+}
+
+header .logo {
+    height: 50px;
+}
+
+header .navbar-nav .nav-link {
+    color: var(--white);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+header .navbar-nav .nav-link:hover,
+header .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+header .navbar-toggler {
+    border: none;
+}
+
+header .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-gray);
+    padding: 3rem 0;
+    margin-top: 2rem;
+}
+
+footer h5 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* --- Property Cards --- */
+.property-card {
+    background-color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.property-card .card-img-container {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.property-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.property-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.property-card .price-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 103, 177, 0.9);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.property-card .card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.property-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.property-card .card-address {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.property-card .card-footer {
+    background-color: transparent;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* --- Forms & Filters --- */
+.search-filters {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(91, 194, 231, 0.25);
+}
+
+/* --- Loading Indicator --- */
+#loading-indicator {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* --- Property Details Page --- */
+.property-details-gallery .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.details-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.details-list li:last-child {
+    border-bottom: none;
+}
+
+.details-list li strong {
+    color: var(--dark-color);
+}
+
+/* --- Contact Page --- */
+.contact-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+}
+
+.contact-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.contact-card .card-title {
+    color: var(--primary-color);
+}
+
+.contact-card .card-subtitle {
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.contact-card .btn {
+    margin-top: 0.5rem;
+}
+
+/* --- Admin Section --- */
+.admin-dashboard .card {
+    text-align: center;
+}
+
+.admin-dashboard .card-title {
+    font-size: 1.2rem;
+}
+
+.admin-dashboard .card-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
